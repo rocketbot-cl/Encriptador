@@ -10,6 +10,9 @@
     "mac":false,
     "docker":true,
     "name": "Encriptador",
+    "dependencies": {
+        "cryptography": "2.8"
+    },
     "title": {
         "en": "Encryptor",
         "es": "Encriptador",
