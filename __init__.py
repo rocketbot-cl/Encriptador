@@ -24,6 +24,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 from cryptography.fernet import Fernet
+import os
 
 """
     Obtengo el modulo que fueron invocados
@@ -84,6 +85,88 @@ if module == "decriptarVar":
         SetVar(varDecript, desencriptado.decode())
 
     except Exception as e:
+        print("\x1B[" + "31;40mError\u2193\x1B[" + "0m")
+        PrintException()
+        raise e
+    
+if module == "encriptarArchivo":
+    # Modulo to encrypt files
+    rutaKey = GetParams('content')
+    rutaFile = GetParams('file')
+    rutaEncryp = GetParams('fileEnc')
+    varEncript = GetParams('res')
+    filename = GetParams('filename')
+    
+    try:
+        # Opening the key
+        with open(rutaKey, 'rb') as filekey:
+            key = filekey.read()
+
+        # Using key
+        fernet = Fernet(key)
+        
+        # Open original file to encrypt
+        with open(rutaFile, 'rb') as file:
+            original = file.read()
+        ext_ = os.path.splitext(rutaFile)
+        print(ext_)
+        # Encrypt file
+        encrypted = fernet.encrypt(original)
+        
+        if rutaEncryp:
+            rutaEncryp = os.path.join(rutaEncryp, filename + ext_[-1] )
+            with open(rutaEncryp, 'wb') as encrypted_file:
+                encrypted_file.write(encrypted)
+        else:
+            # Opening the file in write mode and
+            # writing the encrypted data
+            with open(rutaFile, 'wb') as encrypted_file:
+                encrypted_file.write(encrypted) 
+        
+        SetVar(varEncript, True)
+    except Exception as e:
+        SetVar(varEncript, False)
+        print("\x1B[" + "31;40mError\u2193\x1B[" + "0m")
+        PrintException()
+        raise e
+
+if module == "desencriptarArchivo":
+    # Modulo to encrypt files
+    rutaKey = GetParams('content')
+    rutaEncryp = GetParams('fileEnc')
+    rutaFile = GetParams('file')
+    varEncript = GetParams('res')
+    filename = GetParams('filename')
+
+    try:
+        # Opening the key
+        with open(rutaKey, 'rb') as filekey:
+            key = filekey.read()
+
+        # Using key
+        fernet = Fernet(key)
+        
+        # Open encrypted file
+        with open(rutaEncryp, 'rb') as encrypted_file:
+            encrypted = encrypted_file.read()
+        ext_ = os.path.splitext(rutaEncryp)
+        # Decrypt file
+        decrypted  = fernet.decrypt(encrypted)
+        
+        if rutaFile:
+            rutaFile = os.path.join(rutaFile, filename + ext_[-1] )
+            
+            with open(rutaFile, 'wb') as dec_file:
+                dec_file.write(decrypted)
+        else:
+            # Opening the file in write mode and
+            # writing the encrypted data
+            with open(rutaEncryp, 'wb') as dec_file:
+                dec_file.write(decrypted) 
+        
+        SetVar(varEncript, True)
+    except Exception as e:
+        SetVar(varEncript, False)
         print("\x1B[" + "31;40mError\u2193\x1B[" + "0m")
         PrintException()
         raise e
