@@ -114,12 +114,15 @@ if module == "encriptarArchivo":
         encrypted = fernet.encrypt(original)
         
         if rutaEncryp:
-            rutaEncryp = os.path.join(rutaEncryp, filename + ext_[-1] )
+            if filename:
+                rutaEncryp = os.path.join(rutaEncryp, filename + ext_[-1])
+            else:
+                raise Exception ("Must give a valid filename.")
+            
             with open(rutaEncryp, 'wb') as encrypted_file:
                 encrypted_file.write(encrypted)
         else:
-            # Opening the file in write mode and
-            # writing the encrypted data
+            # Opening the original file in write mode and writing the encrypted data
             with open(rutaFile, 'wb') as encrypted_file:
                 encrypted_file.write(encrypted) 
         
@@ -131,7 +134,7 @@ if module == "encriptarArchivo":
         raise e
 
 if module == "desencriptarArchivo":
-    # Modulo to encrypt files
+    # Modulo to decrypt files
     rutaKey = GetParams('content')
     rutaEncryp = GetParams('fileEnc')
     rutaFile = GetParams('file')
@@ -154,13 +157,15 @@ if module == "desencriptarArchivo":
         decrypted  = fernet.decrypt(encrypted)
         
         if rutaFile:
-            rutaFile = os.path.join(rutaFile, filename + ext_[-1] )
+            if filename:
+                rutaFile = os.path.join(rutaFile, filename + ext_[-1] )
+            else:
+                raise Exception ("Must give a valid filename.")
             
             with open(rutaFile, 'wb') as dec_file:
                 dec_file.write(decrypted)
         else:
-            # Opening the file in write mode and
-            # writing the encrypted data
+            # Opening the encryptedfile in write mode and writing the decrypted data
             with open(rutaEncryp, 'wb') as dec_file:
                 dec_file.write(decrypted) 
         

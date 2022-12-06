@@ -1,8 +1,8 @@
 {
     "author":"Mijahil Franchi",
-    "description": "Encripta y desencripta una variable según la llave creada",
+    "description": "Encrypt and decrypt a variable or file based on the created key. | Criptografar e descriptografar uma variável ou arquivo com base na chave criada. | Encripta y desencripta una variable o archivo según la llave creada.",
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"0.1",
+    "version":"0.2",
     "license": "MIT",
     "homepage":"http://rocketbot.co/",
     "linux": true,
@@ -28,8 +28,14 @@
                 "options":null
             },
             "es": {
-                "title": "Crear Llave",
+                "title": "Crear Key",
                 "description": "Crea un nuevo archivo key.",
+                "title_options": null,
+                "options":null
+            },
+            "pr": {
+                "title": "Criar Key",
+                "description": "Criar um novo arquivo de key.",
                 "title_options": null,
                 "options":null
             },
@@ -39,34 +45,37 @@
                     {
                         "type": "folder_select",
                         "placeholder": {
-                            "es": "Ruta del archivo Key",
-                            "en": "key file path"
+                            "es": "Ruta",
+                            "en": "Path",
+                            "pr": "Caminho"
                         },
                         "title": {
-                            "es": "Ruta del archivo Key:",
-                            "en": "key file path:"
-                        
+                            "es": "Ruta del archivo key:",
+                            "en": "Key file path:",
+                            "pr": "Caminho do arquivo key"
                         },
                         "id": "content",
-                        "css": "col-md-12"
+                        "css": "col-md-6"
                     },
                     {
                         "type": "input",
                         "placeholder": {
-                            "es": "Nombre del archivo Key",
-                            "en": "name file path"
+                            "es": "Nombre",
+                            "en": "Filename",
+                            "pr": "Nome"
                         },
                         "title": {
-                            "es": "Nombre del archivo Key:",
-                            "en": "name file path:"
-                        
+                            "es": "Nombre del archivo:",
+                            "en": "name file path:",
+                            "pr": "Nome do arquivo:"
                         },
                         "help": {
                             "es": "Nombre sin la extension",
-                            "en": "Name without extension"
+                            "en": "Name without extension",
+                            "pr": "Nome sem extensão"
                         },
                         "id": "idnombrekey",
-                        "css": "col-md-12"
+                        "css": "col-md-6"
                     }
                 ]
             },
@@ -96,19 +105,26 @@
                 "title_options": null,
                 "options":null
             },
+            "pr": {
+                "title": "Criptografar variável",
+                "description": "Criptografar conteúdo variável.",
+                "title_options": null,
+                "options":null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
                     {
                         "type": "file_select",
                         "placeholder": {
-                            "es": "Ruta del archivo Key",
-                            "en": "key file path"
+                            "es": "Ruta",
+                            "en": "Path",
+                            "pr": "Caminho"
                         },
                         "title": {
-                            "es": "Ruta del archivo Key:",
-                            "en": "key file path:"
-                        
+                            "es": "Ruta del archivo key:",
+                            "en": "Key file path:",
+                            "pr": "Caminho do arquivo key"
                         },
                         "id": "content",
                         "css": "col-md-12"
@@ -117,33 +133,38 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
-                            "es": "Variable a Encriptar:",
-                            "en": "Variable to encrypt:"
-                        
+                            "es": "Variable a encriptar:",
+                            "en": "Variable to encrypt:",
+                            "pr": "Variável para criptografar:"
                         },
                         "help": {
                             "es": "La variable debe ir sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "A variável deve ficar sem {}"
                         },
                         "id": "idVar",
                         "css": "col-md-12"
                     },
                     {
-                         "type": "input",
+                        "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
-                             "es": "Asignar resultado a variable",
-                            "en": "Assign result to a variable"
+                            "es": "Asignar resultado a variable",
+                            "en": "Assign result to a variable",
+                            "pr": "Atribuir resultado a uma variável"
                         },
                         "help": {
                             "es": "La variable debe ir sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "A variável deve ficar sem {}"
                         },
                         "id": "idVarEncript",
                         "css": "col-md-12"
@@ -176,19 +197,26 @@
                 "title_options": null,
                 "options":null
             },
+            "pr": {
+                "title": "Descriptografar variável",
+                "description": "Descriptografar conteúdo variável.",
+                "title_options": null,
+                "options":null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
                     {
                         "type": "file_select",
                         "placeholder": {
-                            "es": "Ruta del archivo Key",
-                            "en": "key file path"
+                            "es": "Ruta",
+                            "en": "Path",
+                            "pr": "Caminho"
                         },
                         "title": {
-                            "es": "Ruta del archivo Key:",
-                            "en": "key file path:"
-                        
+                            "es": "Ruta del archivo key:",
+                            "en": "Key file path:",
+                            "pr": "Caminho do arquivo key"
                         },
                         "id": "content",
                         "css": "col-md-12"
@@ -197,16 +225,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
-                            "es": "Variable a Desencriptar:",
-                            "en": "Variable to decrypt:"
-                        
+                            "es": "Variable a decriptar:",
+                            "en": "Variable to decrypt:",
+                            "pr": "Variável para descriptografar:"
                         },
                         "help": {
                             "es": "La variable debe ir sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "A variável deve ficar sem {}"
                         },
                         "id": "idVar",
                         "css": "col-md-12"
@@ -215,15 +245,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
-                             "es": "Asignar resultado a variable",
-                            "en": "Assign result to a variable"
+                            "es": "Asignar resultado a variable",
+                            "en": "Assign result to a variable",
+                            "pr": "Atribuir resultado a uma variável"
                         },
                         "help": {
                             "es": "La variable debe ir sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "A variável deve ficar sem {}"
                         },
                         "id": "idVarDecript",
                         "css": "col-md-12"
@@ -256,19 +289,26 @@
                 "title_options": null,
                 "options":null
             },
+            "pr": {
+                "title": "Criptografar arquivo",
+                "description": "Criptografar o conteúdo do arquivo.",
+                "title_options": null,
+                "options":null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
                     {
                         "type": "file_select",
                         "placeholder": {
-                            "es": "Ruta del archivo Key",
-                            "en": "key file path"
+                            "es": "Ruta",
+                            "en": "Path",
+                            "pr": "Caminho"
                         },
                         "title": {
-                            "es": "Ruta del archivo Key:",
-                            "en": "key file path:"
-                        
+                            "es": "Ruta del archivo key:",
+                            "en": "Key file path:",
+                            "pr": "Caminho do arquivo key"
                         },
                         "id": "content",
                         "css": "col-md-12"
@@ -277,12 +317,13 @@
                         "type": "file_select",
                         "placeholder": {
                             "es": "C:/users/User/file.txt",
-                            "en": "C:/users/User/file.txt"
+                            "en": "C:/users/User/file.txt",
+                            "pr": "C:/users/User/file.txt"
                         },
                         "title": {
                             "es": "Ruta del archivo a encriptar:",
-                            "en": "File to encrypt path:"
-                        
+                            "en": "File to encrypt path:",
+                            "pr": "Caminho do arquivo para criptografar:"
                         },
                         "id": "file",
                         "css": "col-md-12"
@@ -291,15 +332,18 @@
                         "type": "folder_select",
                         "placeholder": {
                             "es": "C:/users/User/Documents",
-                            "en": "C:/users/User/Documents"
+                            "en": "C:/users/User/Documents",
+                            "pr": "C:/users/User/Documents"
                         },
                         "title": {
                             "es": "Ruta del archivo encriptado:",
-                            "en": "Encrypted file path:"
+                            "en": "Encrypted file path:",
+                            "pr": "Caminho do arquivo criptografado:"
                         },
                         "help":{
                             "es": "Si se deja vacio, reemplaza el archivo original.",
-                            "en": "If left empty, it replaces the original file."
+                            "en": "If left empty, it replaces the original file.",
+                            "pr": "Se deixado em branco, ele substitui o arquivo original."
                         },
                         "id": "fileEnc",
                         "css": "col-md-9"
@@ -307,16 +351,19 @@
                     {
                         "type": "input",
                         "placeholder": {
-                            "es": "Variable",
-                            "en": "Variable"
+                            "es": "Nombre",
+                            "en": "Filename",
+                            "pr": "Nome"
                         },
                         "title": {
-                            "es": "Nombre archivo encriptado",
-                            "en": "Encrypted filename"
+                            "es": "Nombre del archivo:",
+                            "en": "name file path:",
+                            "pr": "Nome do arquivo:"
                         },
                         "help": {
-                            "es": "Sin extensión",
-                            "en": "Without extension"
+                            "es": "Nombre sin la extension",
+                            "en": "Name without extension",
+                            "pr": "Nome sem extensão"
                         },
                         "id": "filename",
                         "css": "col-md-3"
@@ -325,15 +372,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable",
-                            "en": "Assign result to a variable"
+                            "en": "Assign result to a variable",
+                            "pr": "Atribuir resultado a uma variável"
                         },
                         "help": {
                             "es": "La variable debe ir sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "A variável deve ficar sem {}"
                         },
                         "id": "res",
                         "css": "col-md-12"
@@ -366,19 +416,26 @@
                 "title_options": null,
                 "options":null
             },
+            "pr": {
+                "title": "Descriptografar arquivo",
+                "description": "Descriptografar o conteúdo do arquivo.",
+                "title_options": null,
+                "options":null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
                     {
                         "type": "file_select",
                         "placeholder": {
-                            "es": "Ruta del archivo Key",
-                            "en": "key file path"
+                            "es": "Ruta",
+                            "en": "Path",
+                            "pr": "Caminho"
                         },
                         "title": {
-                            "es": "Ruta del archivo Key:",
-                            "en": "key file path:"
-                        
+                            "es": "Ruta del archivo key:",
+                            "en": "Key file path:",
+                            "pr": "Caminho do arquivo key"
                         },
                         "id": "content",
                         "css": "col-md-12"
@@ -387,12 +444,13 @@
                         "type": "file_select",
                         "placeholder": {
                             "es": "C:/users/User/encrypted_file.txt",
-                            "en": "C:/users/User/encrypted_file.txt"
+                            "en": "C:/users/User/encrypted_file.txt",
+                            "pr": "C:/users/User/encrypted_file.txt"
                         },
                         "title": {
                             "es": "Ruta del archivo encriptado:",
-                            "en": "Encrypted file path:"
-                        
+                            "en": "Encrypted file path:",
+                            "pr": "Caminho do arquivo criptografado:"                        
                         },
                         "id": "fileEnc",
                         "css": "col-md-12"
@@ -401,15 +459,18 @@
                         "type": "folder_select",
                         "placeholder": {
                             "es": "C:/users/User/Documents",
-                            "en": "C:/users/User/Documents"
+                            "en": "C:/users/User/Documents",
+                            "pr": "C:/users/User/Documents"
                         },
                         "title": {
                             "es": "Ruta del archivo desencriptado:",
-                            "en": "Decrypted file path:"
+                            "en": "Decrypted file path:",
+                            "pr": "Caminho do arquivo descriptografado:"
                         },
                         "help":{
-                            "es": "Si se deja vacio, reemplaza el archivo encriptado.",
-                            "en": "If left empty, it replaces the encrypted file."
+                            "es": "Si se deja vacio, reemplaza el archivo original.",
+                            "en": "If left empty, it replaces the original file.",
+                            "pr": "Se deixado em branco, ele substitui o arquivo original."
                         },
                         "id": "file",
                         "css": "col-md-9"
@@ -417,16 +478,19 @@
                     {
                         "type": "input",
                         "placeholder": {
-                            "es": "Variable",
-                            "en": "Variable"
+                            "es": "Nombre",
+                            "en": "Filename",
+                            "pr": "Nome"
                         },
                         "title": {
-                            "es": "Nombre archivo desencriptado",
-                            "en": "Decrypted filename"
+                            "es": "Nombre del archivo:",
+                            "en": "name file path:",
+                            "pr": "Nome do arquivo:"
                         },
                         "help": {
-                            "es": "Sin extensión",
-                            "en": "Without extension"
+                            "es": "Nombre sin la extension",
+                            "en": "Name without extension",
+                            "pr": "Nome sem extensão"
                         },
                         "id": "filename",
                         "css": "col-md-3"
@@ -435,15 +499,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable",
-                            "en": "Assign result to a variable"
+                            "en": "Assign result to a variable",
+                            "pr": "Atribuir resultado a uma variável"
                         },
                         "help": {
                             "es": "La variable debe ir sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "A variável deve ficar sem {}"
                         },
                         "id": "res",
                         "css": "col-md-12"
