@@ -2,7 +2,7 @@
   
 Encrypt and decrypt a variable or file based on the created key.  
   
-![banner](imgs/Banner_Encriptador.jpg)
+![banner](imgs/Banner_Encriptador.png)
 ## How to install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
