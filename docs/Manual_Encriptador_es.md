@@ -2,7 +2,7 @@
   
 Encripta y desencripta una variable o archivo según la llave creada.
 
-![banner](imgs/Banner_Encriptador.png)
+![banner](imgs/Banner_Encriptador.jpg)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Rocketbot.  

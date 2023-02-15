@@ -2,7 +2,7 @@
   
 Criptografar e descriptografar uma variável ou arquivo com base na chave criada.  
   
-![banner](imgs/Banner_Encriptador.png)
+![banner](imgs/Banner_Encriptador.jpg)
 ## Como instalar este módulo
   
 __Baixe__ e __instale__ o conteúdo na pasta 'modules' no caminho do Rocketbot  
